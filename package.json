@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/js-cookie": "^3.0.2",
     "ant-design-vue": "^3.2.0",
     "axios": "^0.26.1",
     "path": "^0.12.7",

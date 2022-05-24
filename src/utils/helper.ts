@@ -7,7 +7,7 @@ export const randomUUID = () => {
 }
 
 
-export function clone (source: any): any {
+export function clone(source: any): any {
     if (Array.isArray(source)) {
         const target: any = source.slice().map(clone);
         const targetKeys = Object.keys(target);
@@ -28,4 +28,12 @@ export function clone (source: any): any {
     }
 
     return source;
+}
+
+export function objToParams<T>(obj: T): string {
+    let url = ''
+    for (const [key, val] of Object.entries(obj)) {
+        url += `&${key}=${encodeURIComponent(val as any)}`
+    }
+    return url.replace(/&/, '?')
 }
